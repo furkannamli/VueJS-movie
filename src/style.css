@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto|Fira+Sans|Indie+Flower|Abril+Fatface');
+
+.navbar-darkcyan{
+    background-color: cadetblue;
+}
+
+html, body{
+    background-color: silver !important;
+    overflow-x: hidden;
+    background-image: url('bg.jpg');
+    animation: slide 75s linear infinite;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: 'Bebas Neue', cursive;
+}
+
+p, span, li{
+    font-family: 'Roboto', sans-serif;
+   list-style: none;
+}
+
+.listing li{
+  float: left;
+}
+
+ul{
+    padding-inline-start: 16px;
+}
+
+@keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: +4000px 0px; }
+}
+
+.home{
+    animation: slide 75s linear infinite;
+    height: 100vh;
+}
+
+.form-control{
+    width: 50% !important;
+}
+
+.searchPage li{
+    list-style: none;
+    float: left;
+}
+
+.card{
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
+    margin: 10px;
+    min-height: 80vh;
+    width: 450px;
+    margin: auto;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+
+}
+
+.card .movie-title{
+    color: black;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.card .movie-year{
+    color: black;
+}
+
+.thumbnail{
+    width: auto;
+    max-width: 350px;
+    height: 550px;
+    border-radius: 10px;
+    transition: 0.4s;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.75);
+}
+
+
+.thumbnail:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.minusmt{
+  margin-top: -1.5rem !important;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.marginl-4{
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto; 
+    border-radius: 15px;
+}
+
+hr{
+    color: black;
+    width: 350px;
+    border: solid 0.5px black !important;
+    margin: 1px auto;
+}
+
+.alt-card{
+  width: 350px;
+  margin-top: 10px;
+}
+
+.movie-detail{
+    background-color: white;
+    border-radius: 25px;
+    margin-bottom: 3rem;
+}
+
+.movie-poster{
+    margin: 25px;
+    margin-top: 0px;
+    border-radius: 15px;
+}
+
+.movie-card-title{
+    padding: 25px;
+    background-color: cadetblue;
+    border-radius: 25px 25px 0 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.metascore{
+    color: white;
+    width: 35px;
+    height: 30px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.sub{
+    vertical-align: middle;
+}
+
+.flex{
+    display: flex;
+    text-align: center;
+    width: 50%;
+}
+
+.justify{
+    justify-content: space-around;
+}
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: goldenrod;
+}
+
+.green{
+    background-color: green;
+}
+
+.black{
+  background-color: black;
+}
+
+.imdb-logo{
+    width: 5%;
+    float: right;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.editor{
+    padding-top: 7px;
+    float: right;
+    font-family: 'Indie Flower', cursive;
+}
+
+.display-1{
+    color:white;
+    padding: 50px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.home-btn{
+    color: black;
+}
+
+.home-btn:hover{
+    color: black;    
+}
+
+button:focus {outline:0 !important;}
