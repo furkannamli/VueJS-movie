@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Navbar></Navbar>
         <div class="row listing">
             <div class="col-md-4" v-for="movie in movies" v-bind:key="movie.id">
                 <div class="card">
@@ -11,8 +12,9 @@
                         <hr>
                         <span class="mt-1 mb-1 movie-year">{{ movie.Year }}</span>
                         <hr> 
+                        <router-link to="/movie/">
                         <button v-on:click="goMovieDetail(movie.imdbID)" type="button" class="btn btn-info mb-3 mt-3"> More Info </button>
-                        
+                        </router-link>
                     </div>
                     
                 </div>
@@ -41,8 +43,11 @@
 </template>
 
 <script>
+import Navbar from './Navbar.vue'
+
 export default {
     props: [ 'movies', 'pageNumber', 'currentPage' ],
+    components: {Navbar},
     data () {
     return {
     }

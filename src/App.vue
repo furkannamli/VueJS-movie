@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <Navbar v-on:MovieSearchRequest="handleSearch" v-on:HomeRequest="goHome"></Navbar>
+    <router-view v-if="!isLoading" v-on:MovieSearchRequest="handleSearch" :movies=movies  :pageNumber=pageNumber :currentPage=currentPage :movie=movie
+    v-on:MovieDetailRequest="goMovieDetail" v-on:NextPageRequest="nextPage" v-on:PrevPageRequest="prevPage" v-on:UpdatePageRequest="updateCurrentPage">
+    </router-view>
+    
     <h1 class="display-1 text-center" v-if="isLoading">Loading...</h1>
-    <Listing v-if="isListing && !isLoading" :movies=movies  :pageNumber=pageNumber :currentPage=currentPage
+   <!-- 
+     <Navbar v-on:MovieSearchRequest="handleSearch" v-on:HomeRequest="goHome"></Navbar>
+     <Listing v-if="isListing && !isLoading" :movies=movies  :pageNumber=pageNumber :currentPage=currentPage
      v-on:MovieDetailRequest="goMovieDetail" v-on:NextPageRequest="nextPage" v-on:PrevPageRequest="prevPage" v-on:UpdatePageRequest="updateCurrentPage" >
-    </Listing>
-    <MovieDetail v-if="isDetail && !isLoading" :movie=movie></MovieDetail>
+    </Listing> 
+    <MovieDetail v-if="isDetail && !isLoading" :movie=movie></MovieDetail>-->
   </div>
 </template>
 
@@ -23,8 +28,6 @@ export default {
       query: "",
       movies: [],
       isLoading: false,
-      isListing: false,
-      isDetail: false,
       movie: [],
       totalResults: null,
       pageNumber: 0,
@@ -34,8 +37,6 @@ export default {
   },
   methods:{
     handleSearch(query){
-      this.isListing= true;
-      this.isDetail= false;
       this.query = query;
       this.currentPage = 1;
       this.isLoading = true;
@@ -52,8 +53,6 @@ export default {
         })
       },
       goMovieDetail(id){
-        this.isListing= false;
-        this.isDetail= true;
         this.isLoading = true;
           fetch('https://www.omdbapi.com/?apikey=3994739e&i=' +id)
           .then((res) => {
@@ -85,6 +84,8 @@ export default {
         this.fetchMovie();
       },
       fetchMovie(){
+        this.isLoading = true;
+
         fetch('https://www.omdbapi.com/?apikey=3994739e&s=' +this.query+ '&page=' +this.currentPage )
           .then((res) => {
             return res.json()})
@@ -92,10 +93,6 @@ export default {
             this.movies = res.Search;
             this.isLoading = false;
         })
-      },
-      goHome(){
-        this.isListing= false;
-        this.isDetail= false;
       }
   }
 

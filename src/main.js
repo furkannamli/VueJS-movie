@@ -16,8 +16,8 @@ import MovieDetail from './components/MovieDetail.vue'
 const router = new VueRouter({
   routes: [
     { path: '/', component: Home},
-    { path: '/search', component: Listing},
-    { path: '/movie', component: MovieDetail},
+    { path: '/search/:page', component: Listing},
+    { path: '/movie/', component: MovieDetail},
   ],
   mode: 'history'
 })

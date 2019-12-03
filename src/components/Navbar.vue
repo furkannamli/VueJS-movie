@@ -9,12 +9,12 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                  <router-link to='/' > <span v-on:click="goHome()" class="home-btn nav-link pb-1" >Home </span></router-link>
+                                  <router-link to='/' > <span class="home-btn nav-link pb-1" >Home </span></router-link>
                                 </li>
                             </ul>
                                 <input class="form-control mr-sm-2" type="text" placeholder="Eg: Star Wars" v-model="query" 
                                 @keypress.enter="handleSearch">
-                                <span to="/search"><button v-on:click="handleSearch" type="button" class="btn btn-primary">Search</button> </span>
+                                <router-link to='/search/1'><span ><button v-on:click="handleSearch" type="button" class="btn btn-primary">Search</button> </span></router-link>
                         </div>
                     </nav>
                     <div class="text-center">
@@ -35,9 +35,6 @@ export default {
   methods:{
       handleSearch(){
           this.$emit('MovieSearchRequest', this.query)
-        },
-        goHome(){
-            this.$emit('HomeRequest')
         }
   }
 }
