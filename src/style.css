@@ -7,7 +7,6 @@
 html, body{
     background-color: silver !important;
     overflow-x: hidden;
-    background-image: url('bg.jpg');
     animation: slide 75s linear infinite;
 }
 
