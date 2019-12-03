@@ -37,6 +37,7 @@ export default {
   },
   methods:{
     handleSearch(query){
+      this.$router.push({ path: '/search/1' })
       this.query = query;
       this.currentPage = 1;
       this.isLoading = true;
@@ -84,6 +85,7 @@ export default {
         this.fetchMovie();
       },
       fetchMovie(){
+        this.$router.push({ path: '/search/' +this.currentPage })
         this.isLoading = true;
 
         fetch('https://www.omdbapi.com/?apikey=3994739e&s=' +this.query+ '&page=' +this.currentPage )

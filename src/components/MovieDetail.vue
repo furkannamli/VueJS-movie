@@ -5,8 +5,8 @@
                     <div class="movie-detail">
                     <h1 class="my-4 movie-card-title">{{ movie.Title }} -
                       <small>{{ movie.Year }}</small>
-                      <img class="img-fluid imdb-logo" :src="'../img/imdb.png'" />
-                      <img class="img-fluid imdb-logo" :src="'../img/vue-badge.png'" />
+                      <img class="img-fluid imdb-logo" :src="'../../img/imdb.png'" />
+                      <img class="img-fluid imdb-logo" :src="'../../img/vue-badge.png'" />
                     </h1>
 
                     <div class="row">
@@ -35,16 +35,16 @@
                         <div class="mr-3 mb-3">
                             <img  class="img-fluid imdb-logo" 
                             v-if="movie.Metascore > 89 || movie.Metascore == 'N/A' && movie.imdbRating > 8.9" 
-                            :src="'../img/100.png'" />
+                            :src="'../../img/100.png'" />
                             <img class="img-fluid imdb-logo" 
                             v-if="movie.Metascore > 80 && movie.Metascore <= 89 || movie.Metascore == 'N/A' && movie.imdbRating >= 8" 
-                            :src="'../img/good.png'" />
+                            :src="'../../img/good.png'" />
                             <img class="img-fluid imdb-logo" 
                             v-if="movie.Metascore < 80 && movie.Metascore > 55 || movie.Metascore == 'N/A' && movie.imdbRating >= 6.5 && movie.imdbRating < 8" 
-                            :src="'../img/norm.png'" />
+                            :src="'../../img/norm.png'" />
                             <img class="img-fluid imdb-logo" 
                             v-if="movie.Metascore < 56 || movie.imdbRating < 6.5" 
-                            :src="'../@img/shit.png'" />
+                            :src="'../../img/shit.png'" />
                             <span class="editor">Editor's Rating: </span></div>
                         
                       </div>

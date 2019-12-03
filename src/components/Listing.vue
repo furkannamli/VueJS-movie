@@ -12,7 +12,7 @@
                         <hr>
                         <span class="mt-1 mb-1 movie-year">{{ movie.Year }}</span>
                         <hr> 
-                        <router-link to="/movie/">
+                        <router-link v-bind:to="'/movie/' +movie.imdbID">
                         <button v-on:click="goMovieDetail(movie.imdbID)" type="button" class="btn btn-info mb-3 mt-3"> More Info </button>
                         </router-link>
                     </div>
